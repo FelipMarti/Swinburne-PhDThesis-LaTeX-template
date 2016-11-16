@@ -1,0 +1,103 @@
+\documentclass{fsetswin-phd}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+%\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage[titletoc, header, page]{appendix}
+
+%\usepackage{hyperref}
+\usepackage{pdfpages}
+
+\usepackage{datetime}
+\usepackage[pdfusetitle]{hyperref}
+
+%\geometry{showframe}
+
+
+
+
+\author{
+	Felip Mart\'{i} Carrillo 
+%    \\ 	{\normalsize \href{mailto:fmarti@swin.edu.au}{\texttt{fmarti@swin.edu.au}}}
+%	\and
+%	Camilla Lekebjer \\
+%    {\normalsize \href{mailto:Camilla.Lekebjer@cs.lth.se}{\texttt{Camilla.Lekebjer@cs.lth.se}}}
+}
+
+\title{How to spend between three or four years of your live Drinking Beer in Academia}
+\subtitle{A successful story finding Free Food around campus}
+
+%% AFILIATIONS
+%% You can choose between one or two affiliations, if you don't fill in
+%% any of those commands, Swinburne Vertical logo will appear by default.
+%% If you only have one affiliation, use the following commands:
+%\affilogo{logos/SwinLogoH}
+%\affiliation{Swinburne University of Technology}
+
+%% If you have two affiliations, use the following fields:
+\affiliations{Swinburne University of Technology}{Data61 - CSIRO}
+\affilogos{logos/data61-csiro-logo}{logos/SwinLogoH}
+
+%% Document, is this your Doctoral Thesis, or your Confirmation of Candidature?
+%\TypeOfDocument{Doctoral Thesis}
+\TypeOfDocument{Confirmation of Candidature}
+
+%% Place where you submit and/or present the thesis
+%\location{Barcelona, Catalunya}
+%\location{Lund, Sweden}
+\location{Melbourne, Australia}
+
+%% Date without the day of the month
+\newdateformat{mydate}{\monthname[\THEMONTH] \THEYEAR}
+\date{\mydate\today}
+%\date{January 2015}
+
+
+
+\begin{document}
+
+    %% This command generates all the pages before Chapter 1
+    %% Cover, Abstract, Acknowledgements, Declaration, Contents
+    \makefrontmatter
+
+	%% If list of figures and/or list of tables is needed, UNCOMENT the following lines
+	%\listoffigures
+	%\listoftables
+
+    %% Contents are still in roman numbers, don't touch this
+    \cleardoublepage
+
+    %% Arabic numbers from Chapter 1 to the end.
+    \pagenumbering{arabic}
+
+    %% Chapters. Include here all your chapters
+    \include{Chapters/chapter1}
+
+    \include{Chapters/chapter2}
+
+    \include{Chapters/chapter3}
+
+
+
+    %% Bibliography using bibtex
+    \makebibliography{BibPhDThesis}
+
+    
+    %% Appendices. If you don't have any appendices, comment the appendices section
+    \begin{appendices}
+
+        %% Include here all your appendices
+        \include{Appendices/appendixA}
+
+        \include{Appendices/appendixB}
+
+        % If you want to add a pdf already generated in the appendix, use the following command
+        %\includepdf[pages={1}]{papers/popsci.pdf}
+
+    \end{appendices}
+
+\end{document}

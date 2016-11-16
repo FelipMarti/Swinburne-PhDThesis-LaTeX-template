@@ -1,0 +1,111 @@
+
+%% Only used to display font sizes
+\makeatletter
+\newcommand\thefontsize[1]{{#1 \f@size pt\par}}
+\makeatother
+%%%%%%%%%%
+
+
+\chapter[Short on Formatting]{Formatting}
+Avoid empty spaces between \textit{chapter}-\textit{section}, \textit{section}-\textit{sub-section}. For instance, a very brief summary of the chapter would be one way of bridging the chapter heading and the first section of that chapter.
+\section{Page Size and Margins}
+Use A4 paper, with the text margins given in Table \ref{tab:margins}.
+\begin{table}[!hbt]
+\centering
+\caption{Text margins for A4.}\label{tab:margins}
+\begin{tabular}{cc}
+\hline
+\textbf{margin} & \textbf{space} \\
+\hline 
+top &  3.0cm\\ 
+
+bottom & 3.0cm \\ 
+ 
+left (inside) & 2.5cm \\ 
+
+right (outside) & 2.5cm \\ 
+
+binding offset & 1.0cm \\ 
+\hline 
+\end{tabular} 
+\end{table}
+
+\section{Typeface and Font Sizes}
+The fonts to use for the reports are \textbf{TeX Gyre Termes} (a \textbf{Times New Roman} clone) for serif fonts, \textsf{\textbf{TeX Gyre Heros}} (a \textsf{\textbf{Helvetica}} clone) for sans-serif fonts, and finally \texttt{\textbf{TeX Gyre Cursor}} (a \texttt{\textbf{Courier}} clone) as mono-space font. All these fonts are included with the TeXLive 2013 installation. Table \ref{tab:fonts} lists the most important text elements and the associated fonts.
+\begin{table}[!hbt]
+\caption{Font types, faces and sizes to be used.}\label{tab:fonts}
+
+ \begin{tabular}{ l c c c}
+\hline 
+\textbf{Element} & \textbf{Face} & \textbf{Size}  & \textbf{\LaTeX size}  \\ 
+\hline 
+{\huge \textbf{Ch. label}} & {\huge \textbf{serif, bold}} & \thefontsize\huge & \verb+\huge+ \\ 
+{\Huge \textbf{Chapter}} & {\Huge \textbf{serif, bold}} & \thefontsize\Huge & \verb+\Huge+ \\ 
+{\LARGE \textsf{\textbf{Section}}} & {\Large \textsf{\textbf{sans-serif, bold}}} & \thefontsize\LARGE &  \verb+\LARGE+  \\ 
+{\Large \textsf{\textbf{Subsection}}} & {\Large \textsf{\textbf{sans-serif, bold}}} & \thefontsize\Large & \verb+\Large+ \\ 
+{\large \textsf{\textbf{Subsubsection}}} & {\Large \textsf{\textbf{sans-serif, bold}}} & \thefontsize\large &  \verb+\large+ \\ 
+Body & serif & \thefontsize\normalsize & {\footnotesize \verb+\normalsize+} \\
+%{\footnotesize Footnote} & serif  & \thefontsize\footnotesize & {\footnotesize \verb+\footnotesize+} \\
+{\footnotesize \textsc{Header}} & {\footnotesize \textsc{serif, SmallCaps}} & \thefontsize\footnotesize &  \\
+Footer (page numbers) & serif, regular & \thefontsize\normalsize &  \\
+\hline
+\textbf{Figure label} & \textbf{serif, bold} & \thefontsize\normalsize & \\
+Figure caption & serif, regular & \thefontsize\normalsize & \\
+\textsf{In figure} & \textsf{sans-serif} & \textit{any} & \\
+\textbf{Table label} & \textbf{serif, bold} & \thefontsize\normalsize & \\
+Table caption and text & serif, regular & \thefontsize\normalsize & \\
+\texttt{Listings} & \texttt{mono-space} & $\le$ \thefontsize\normalsize & \\
+\hline 
+\end{tabular} 
+\end{table}
+
+\subsection{Headers and Footers}
+Note that the page headers are aligned towards the outside of the page (right on the right-hand page, left on the left-hand page) and they contain the section title on the right and the chapter title on the left respectively, in \textsc{SmallCaps}. The footers contain only page numbers on the exterior of the page, aligned right or left depending on the page. The lines used to delimit the headers and footers from the rest of the page are $0.4 pt$ thick, and are as long as the text.
+
+\subsection{Chapters, Sections, Paragraphs}
+Chapter, section, subsection, etc. names are all left aligned, and numbered as in this document. 
+
+Chapters always start on the right-hand page, with the label and title separated from the rest of the text by a $0.4 pt$ thick line.
+
+Paragraphs are justified (left and right), using single line spacing. Note that the first paragraph of a chapter, section, etc. is not indented, while the following are indented.
+
+\subsection{Tables}
+Table captions should be located above the table, justified, and spaced 2.0cm from left and right (important for very long captions). Tables should be numbered, but the numbering is up to you, and could be, for instance:
+\begin{itemize}
+\item \textbf{Table X.Y} where X is the chapter number and Y is the table number within that chapter. (This is the default in \LaTeX. More on {\LaTeX} can be found on-line, including whole books, such as \cite{goossens93}.) or
+\item \textbf{Table Y} where Y is the table number within the whole report
+\end{itemize}
+As a recommendation, use regular paragraph text in the tables, bold headings and avoid vertical lines (see Table \ref{tab:fonts}). 
+
+\subsection{Figures}
+Figure labels, numbering, and captions should be formed similarly to tables. As a recommendation, use vector graphics in figures (Figure \ref{fig:vectorg}), rather than bitmaps (Figure \ref{fig:rasterg}). Text within figures usually looks better with sans-serif fonts.
+\begin{figure}[!hbt]
+\centering
+\includegraphics[scale=2.5]{Figures/examplepic1.pdf} 
+\caption{A PDF vector graphics figure. Notice the numbering and placement of the caption. The caption text is indented 2.0cm from both left and right text margin.}\label{fig:vectorg}
+\end{figure}
+
+\begin{figure}[!hbt]
+\centering
+\includegraphics[scale=2.5]{Figures/examplepic3.jpg} 
+\caption{A JPEG bitmap figure. Notice the bad quality of such an image when scaling it. Sometimes bitmap images are unavoidable, such as for screen dumps.}\label{fig:rasterg}
+\end{figure}
+For those interested in delving deeper into the design of graphical information display, please refer to books such as \cite{Tufte:1986, few2012show}.
+
+\section{Mathematical Formulae and Equations}
+You are free to use in-text equations and formulae, usually in \textit{italic serif} font. For instance: $S = \sum_i a_i$. We recommend using numbered equations when you do need to refer to the specific equations:
+\begin{equation}
+E = \int_0^{\delta} P(t) dt \quad \longleftrightarrow \quad E = m c^2
+\end{equation}
+The numbering system for equations should be similar to that used for tables and figures.
+
+\section{References}
+Your references should be gathered in a \textbf{References} section, located at the end of the document (before \textbf{Appendices}). We recommend using number style references, ordered as appearing in the document or alphabetically. Have a look at the references in this template in order to figure out the style, fonts and fields. Web references are acceptable (with restraint) as long as you specify the date you accessed the given link \cite{fontspec, CTAN}. You may of course use URLs directly in the document, using mono-space font, i.e. \url{http://cs.lth.se/}.
+
+\section{Colours}
+As a general rule, all theses are printed in black-and-white, with the exception of selected parts in selected theses that need to display colour images essential to describing the thesis outcome (\textit{computer graphics}, for instance).
+
+A strong requirement is for using \textbf{black text on white background} in your document's main text. Otherwise we do encourage using colours in your figures, or other elements (i.e. the colour marking internal and external references) that would make the document more readable on screen. You may also emphasize table rows, columns, cells, or headers using white text on black background, or black text on light grey background.
+
+Finally, note that the document should look good in black-and-white print. Colours are often rendered using monochrome textures in print, which makes them look different from on screen versions. This means that you should choose your colours wisely, and even opt for black-and-white textures when the distinction between colours is hard to make in print. The best way to check how your document looks, is to print out a copy yourself.
+
