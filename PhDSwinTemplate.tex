@@ -1,4 +1,4 @@
-\documentclass{fsetswin-phd}
+\documentclass{class/fsetswin-phd}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{amsmath}
@@ -7,13 +7,23 @@
 \usepackage{amsthm}
 %\usepackage{makeidx}
 \usepackage{graphicx}
+\usepackage{subcaption} % For complex figures
 \usepackage[titletoc, header, page]{appendix}
 
 %\usepackage{hyperref}
-\usepackage{pdfpages}
+\usepackage{pdfpages}   %To attach PDF in the appendices
 
-\usepackage{datetime}
+\usepackage{array}      % For fancy tables
+\usepackage{booktabs}   % For formal tables
+\usepackage{longtable}  % For long tables
+\usepackage{lipsum}
+
+
+\usepackage{datetime}   % To manage date format
 \usepackage[pdfusetitle]{hyperref}
+
+% Uncomment if gantt chart is needed
+%\usepackage{class/gantt}    
 
 %\geometry{showframe}
 
@@ -40,7 +50,7 @@
 
 %% If you have two affiliations, use the following fields:
 \affiliations{Swinburne University of Technology}{Data61 - CSIRO}
-\affilogos{logos/data61-csiro-logo}{logos/SwinLogoH}
+\affilogos{class/logos/data61-csiro-logo}{class/logos/SwinLogoH}
 
 %% Document, is this your Doctoral Thesis, or your Confirmation of Candidature?
 %\TypeOfDocument{Doctoral Thesis}

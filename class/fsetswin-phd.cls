@@ -130,8 +130,8 @@
 	\titleformat{\section}[block]{\normalfont\LARGE\bfseries\sffamily}{\thesection}{15pt}{\LARGE}
 	\titleformat{\subsection}[block]{\normalfont\Large\bfseries\sffamily}{\thesubsection}{15pt}{\Large}
 	\titleformat{\subsubsection}[block]{\normalfont\large\bfseries\sffamily}{\thesubsubsection}{15pt}{\large}
-	\titleformat{\paragraph}[block]{\normalfont\large\bfseries\sffamily}{\paragraph}{15pt}{\large}
-	\titleformat{\subparagraph}[block]{\normalfont\large\bfseries\sffamily}{\subparagraph}{15pt}{\large}
+	\titleformat{\paragraph}[block]{\normalfont\normalsize\bfseries\sffamily}{\paragraph}{15pt}{\normalsize}
+	\titleformat{\subparagraph}[block]{\normalfont\normalsize\bfseries\sffamily}{\subparagraph}{15pt}{\normalsize}
 \makeatother
 
 
