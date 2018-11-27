@@ -17,13 +17,14 @@
 \usepackage{booktabs}   % For formal tables
 \usepackage{longtable}  % For long tables
 \usepackage{lipsum}
-
+\usepackage{siunitx}    % International System of Units
 
 \usepackage{datetime}   % To manage date format
 \usepackage[pdfusetitle]{hyperref}
 
-% Uncomment if gantt chart is needed
-%\usepackage{class/gantt}    
+\usepackage{setspace}   % To configure dobule/single space
+
+%\usepackage{class/gantt}  % Uncomment if gantt chart is needed 
 
 %\geometry{showframe}
 
@@ -38,8 +39,8 @@
 %    {\normalsize \href{mailto:Camilla.Lekebjer@cs.lth.se}{\texttt{Camilla.Lekebjer@cs.lth.se}}}
 }
 
-\title{How to spend between three or four years of your live Drinking Beer in Academia}
-\subtitle{A successful story finding Free Food around campus}
+\title{PhD Thesis template in LaTeX}
+\subtitle{The unofficial Swinburne University of Technology Thesis template}
 
 %% AFILIATIONS
 %% You can choose between one or two affiliations, if you don't fill in
@@ -53,8 +54,8 @@
 \affilogos{class/logos/data61-csiro-logo}{class/logos/SwinLogoH}
 
 %% Document, is this your Doctoral Thesis, or your Confirmation of Candidature?
-%\TypeOfDocument{Doctoral Thesis}
-\TypeOfDocument{Confirmation of Candidature}
+\TypeOfDocument{Doctoral Thesis}
+%\TypeOfDocument{Confirmation of Candidature}
 
 %% Place where you submit and/or present the thesis
 %\location{Barcelona, Catalunya}
@@ -83,6 +84,14 @@
 
     %% Arabic numbers from Chapter 1 to the end.
     \pagenumbering{arabic}
+
+    %% Double or single space. 
+    %% My supervisors want read the thesis in double space to make comments
+    %% `make' to compile the document in single space
+    %% `make draft' to compile it in double space
+    \ifdefined\isdraft
+        \doublespacing
+    \fi
 
     %% Chapters. Include here all your chapters
     \include{Chapters/chapter1}
