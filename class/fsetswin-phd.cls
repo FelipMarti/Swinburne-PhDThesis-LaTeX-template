@@ -138,8 +138,9 @@
 % captions for figures and tables
 \RequirePackage{caption}
 \makeatletter
-	\renewcommand{\captionlabelfont}{\bfseries}
-	\setlength{\captionmargin}{2cm}
+	\renewcommand{\captionlabelfont}{\normalsize\bfseries}
+	\renewcommand{\captiontextfont}{\small}
+	\setlength{\captionmargin}{1.3cm}
 \makeatother
 
 % takes care of the abstract and aknowledgements
