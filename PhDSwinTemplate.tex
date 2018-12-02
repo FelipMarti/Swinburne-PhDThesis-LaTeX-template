@@ -85,12 +85,20 @@
     %% Arabic numbers from Chapter 1 to the end.
     \pagenumbering{arabic}
 
-    %% Double or single space. 
-    %% My supervisors want read the thesis in double space to make comments
-    %% `make' to compile the document in single space
+    %% Double or One-half space. 
+    %%
+    %% My supervisors want read the thesis in double space to make comments.
+    %% One-and-a-half line spacing should be used for the body of the work; 
+    %% single spacing may be used for indented quotations and in appendices, reference lists, and footnotes
+    %% 
+    %% https://www.swinburne.edu.au/media/intranet/research/docs/grad-studies-pdfs/SoP-Candidature-Handbook-November-2018.pdf
+    %%
+    %% `make' to compile the document in one half spacing
     %% `make draft' to compile it in double space
     \ifdefined\isdraft
         \doublespacing
+    \else
+        \onehalfspacing
     \fi
 
     %% Chapters. Include here all your chapters
